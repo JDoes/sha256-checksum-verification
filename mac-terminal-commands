@@ -1,0 +1,14 @@
+downloaded openSUSE Leap 15.3, and checksum file from 
+https://get.opensuse.org/leap/?type=desktop#download
+
+navigate to appropriate directory (where your iso and checksum file are)
+
+shasum -a 256 openSUSE-Leap-15.3-2-DVD-x86_64-Build24.5-Media.iso | tee sha256.txt
+ls
+cat openSUSE-Leap-15.3-DVD-x86_64-Current.iso.sha256 >> sha256.txt
+cat sha256.txt
+sort sha256.txt | uniq >> sorted.txt
+ls
+cat sorted.txt
+
+if sorted.txt has only one line, then you're golden.
